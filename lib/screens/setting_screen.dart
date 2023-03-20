@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:readmenow/screens/settings_screen.dart';
+import 'package:readmenow/utils/theme_service.dart';
 import 'package:readmenow/widgets/top_view.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -8,6 +8,7 @@ class SettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeService themeService = ThemeService();
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -23,19 +24,27 @@ class SettingScreen extends StatelessWidget {
                   ),
                 ),
                 const TopBar(
-                  text: "Settings",
+                  text: "Appearance",
                   isTrelingIconRequired: false,
                 ),
               ],
             ),
             const Divider(),
             const SizedBox(height: 10),
-            MoreSettingsTiles(
-              icon: Icons.light_mode,
-              text: "Appearance",
-              onPressed: () {},
+            ListTile(
+              leading: const Icon(Icons.dark_mode),
+              title: const Text("Change Theme"),
+              onTap: () {
+                if (Get.isDarkMode) {
+                  Get.changeThemeMode(ThemeMode.light);
+                  themeService.switchTheme();
+                } else {
+                  Get.changeThemeMode(ThemeMode.dark);
+                  themeService.switchTheme();
+                }
+              },
             ),
-            const Divider()
+            const Divider(),
           ],
         ),
       ),

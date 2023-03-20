@@ -88,7 +88,6 @@ class HomeScreen extends StatelessWidget {
                           Text(
                             book.title ?? "",
                             style: const TextStyle(
-                              color: Colors.black,
                               fontSize: 10,
                               fontWeight: FontWeight.w400,
                             ),

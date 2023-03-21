@@ -1,5 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/get.dart' hide Trans;
 import 'package:ionicons/ionicons.dart';
 import 'package:readmenow/screens/audio_book_screen.dart';
 import 'package:readmenow/screens/books_screen.dart';
@@ -36,26 +37,26 @@ class MainScreen extends GetView<BottomBarController> {
           ),
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            items: const <BottomNavigationBarItem>[
+            items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Icon(Ionicons.home_outline),
-                label: 'Home',
+                icon: const Icon(Ionicons.home_outline),
+                label: 'home'.tr(),
               ),
               BottomNavigationBarItem(
-                icon: Icon(Ionicons.book_outline),
-                label: 'Books',
+                icon: const Icon(Ionicons.book_outline),
+                label: 'books'.tr(),
               ),
               BottomNavigationBarItem(
-                icon: Icon(Ionicons.musical_notes),
-                label: 'Audiobook',
+                icon: const Icon(Ionicons.musical_notes),
+                label: 'audiobook'.tr(),
               ),
               BottomNavigationBarItem(
-                icon: Icon(Ionicons.compass_outline),
-                label: 'Discover',
+                icon: const Icon(Ionicons.compass_outline),
+                label: 'discover'.tr(),
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.more_horiz),
-                label: 'More',
+                icon: const Icon(Icons.more_horiz),
+                label: 'more'.tr(),
               ),
             ],
             currentIndex: bottomBarController.selectedIndex,

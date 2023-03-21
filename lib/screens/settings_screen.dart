@@ -1,11 +1,14 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/get.dart' hide Trans;
 import 'package:ionicons/ionicons.dart';
 import 'package:readmenow/screens/feedback_screen.dart';
 import 'package:readmenow/screens/information_help.dart';
 import 'package:readmenow/screens/my_account.dart';
 import 'package:readmenow/screens/setting_screen.dart';
 import 'package:readmenow/widgets/top_view.dart';
+
+import 'change_language.dart';
 
 class MoreScreen extends StatelessWidget {
   const MoreScreen({super.key});
@@ -25,30 +28,37 @@ class MoreScreen extends StatelessWidget {
             ),
             MoreSettingsTiles(
               icon: Ionicons.person_outline,
-              text: "My Account",
+              text: "myAccount".tr(),
               onPressed: () {
                 Get.to(const MyAccountScreen());
               },
             ),
             MoreSettingsTiles(
               icon: Ionicons.settings_outline,
-              text: "Settings",
+              text: "settings".tr(),
               onPressed: () {
                 Get.to(const SettingScreen());
               },
             ),
             MoreSettingsTiles(
               icon: Icons.feedback_outlined,
-              text: "Feedback",
+              text: "feedback".tr(),
               onPressed: () {
                 Get.to(const FeedbackScreen());
               },
             ),
             MoreSettingsTiles(
               icon: Ionicons.information_circle_outline,
-              text: "Information & Help",
+              text: "informationHelp".tr(),
               onPressed: () {
                 Get.to(const InformationHelp());
+              },
+            ),
+            MoreSettingsTiles(
+              icon: Ionicons.language,
+              text: "Change Language",
+              onPressed: () {
+                Get.to(const SelectLanguageScreen());
               },
             ),
           ],

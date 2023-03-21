@@ -1,9 +1,52 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:readmenow/models/book.dart';
 import 'package:readmenow/widgets/top_view.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late BannerAd bannerAd;
+  bool isAdLoaded = false;
+  var addTestID =
+      "ca-app-pub-3940256099942544/6300978111"; //testID ca-app-pub-3940256099942544/6300978111
+  void initBannerAd() {
+    bannerAd = BannerAd(
+      size: AdSize.banner,
+      adUnitId: addTestID,
+      listener: BannerAdListener(onAdLoaded: (ad) {
+        setState(() {
+          isAdLoaded = true;
+        });
+      }, onAdFailedToLoad: ((ad, error) {
+        ad.dispose();
+        if (kDebugMode) {
+          print("error error $error");
+        }
+      })),
+      request: const AdRequest(),
+    );
+    bannerAd.load();
+  }
+
+  @override
+  void dispose() {
+    bannerAd.dispose();
+    super.dispose();
+  }
+
+  @override
+  initState() {
+    initBannerAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +55,17 @@ class HomeScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const TopBar(
-                text: "Home",
+              TopBar(
+                text: "home".tr(),
                 isTrelingIconRequired: true,
               ),
+              isAdLoaded
+                  ? SizedBox(
+                      height: 60,
+                      width: double.infinity,
+                      child: AdWidget(ad: bannerAd),
+                    )
+                  : const SizedBox(),
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -24,10 +74,10 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        "Please Login for full acess of the library to read or buy ",
+                      Text(
+                        "sorryYouAreNotLogin".tr(),
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.w600,
                         ),
@@ -36,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                       TextButton(
                         onPressed: () {},
                         child: Text(
-                          "Login",
+                          "login".tr(),
                           style: TextStyle(color: Colors.red.shade900),
                         ),
                       )
@@ -49,15 +99,15 @@ class HomeScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      "ReadMeNow recommends",
-                      style: TextStyle(
+                    Text(
+                      "recommends".tr(),
+                      style: const TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
                     Text(
-                      "DISCOVER >",
+                      "discover".tr(),
                       style: TextStyle(
                         color: Colors.red.shade900,
                         fontSize: 10,

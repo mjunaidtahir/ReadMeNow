@@ -1,5 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/get.dart' hide Trans;
 import 'package:readmenow/screens/main_screen.dart';
 import 'package:readmenow/screens/sign_up_screen.dart';
 import 'package:readmenow/widgets/app_button.dart';
@@ -31,7 +32,7 @@ class LoginScreen extends StatelessWidget {
                   height: screenSize.height * .15,
                 ),
                 Text(
-                  "Read Me Now",
+                  "readMeNow".tr(),
                   style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 25,
@@ -40,33 +41,34 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                   height: screenSize.height * .06,
                 ),
-                const Text(
-                  "Login To Your Account",
+                Text(
+                  "loginToYourAccount".tr(),
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   height: screenSize.height * .01,
                 ),
-                const Text(
-                  "Please enter the information below to login",
+                Text(
+                  "enterYourinfo".tr(),
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 14),
+                  style: const TextStyle(fontSize: 14),
                 ),
                 SizedBox(
                   height: screenSize.height * .08,
                 ),
-                const AppTextField(
-                  label: "Email",
-                  hintText: "Enter Email",
+                AppTextField(
+                  label: "emailAddress".tr(),
+                  hintText: "emailAddress".tr(),
                   keyboardType: TextInputType.emailAddress,
                 ),
                 SizedBox(
                   height: screenSize.height * .02,
                 ),
-                const AppTextField(
-                  label: "Password",
-                  hintText: "Enter Password",
+                AppTextField(
+                  label: "password".tr(),
+                  hintText: "password".tr(),
                   isPassword: true,
                   keyboardType: TextInputType.visiblePassword,
                 ),
@@ -77,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                       // AppNavigator.push(context, const ForgetPasswordScreen());
                     },
                     child: Text(
-                      "Forget password?",
+                      "forgotPassword".tr(),
                       textAlign: TextAlign.right,
                       style:
                           TextStyle(fontSize: 14, color: Colors.red.shade700),
@@ -88,22 +90,22 @@ class LoginScreen extends StatelessWidget {
                   height: screenSize.height * .16,
                 ),
                 AppButton(
-                  text: "Login",
+                  text: "login".tr(),
                   onPressed: () => openHomeScreen(),
                 ),
                 const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
-                      "Don't have an account?",
+                    Text(
+                      "dontHaveAnAccount".tr(),
                       textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 14),
+                      style: const TextStyle(fontSize: 14),
                     ),
                     TextButton(
                       onPressed: () => onPressSignUp(),
                       child: Text(
-                        "Sign Up",
+                        "signUp".tr(),
                         textAlign: TextAlign.right,
                         style:
                             TextStyle(fontSize: 14, color: Colors.red.shade700),

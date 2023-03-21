@@ -38,10 +38,10 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
               Ionicons.language,
             ),
             title: const Text("English"),
-            onTap: () {
-              setState(() {
-                EasyLocalization.of(context)?.setLocale(const Locale('en'));
-              });
+            onTap: () async {
+              await EasyLocalization.of(context)?.setLocale(const Locale('en'));
+              Get.updateLocale(const Locale("en"));
+              setState(() {});
             },
           ),
           ListTile(
@@ -49,9 +49,11 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
               Ionicons.language,
             ),
             title: const Text("Vietnamese"),
-            onTap: () {
+            onTap: () async {
+              await EasyLocalization.of(context)?.setLocale(const Locale('vi'));
+              Get.updateLocale(const Locale("vi"));
               setState(() {
-                EasyLocalization.of(context)?.setLocale(const Locale('vi'));
+                // context.locale = const Locale("vi");
               });
             },
           ),

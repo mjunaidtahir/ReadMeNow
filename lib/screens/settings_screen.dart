@@ -19,8 +19,8 @@ class MoreScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            const TopBar(
-              text: "More",
+            TopBar(
+              text: "more".tr(),
               isTrelingIconRequired: false,
             ),
             const SizedBox(
@@ -56,7 +56,7 @@ class MoreScreen extends StatelessWidget {
             ),
             MoreSettingsTiles(
               icon: Ionicons.language,
-              text: "Change Language",
+              text: "changeLanguage".tr(),
               onPressed: () {
                 Get.to(const SelectLanguageScreen());
               },

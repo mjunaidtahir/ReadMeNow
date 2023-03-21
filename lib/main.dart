@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,14 +11,17 @@ import 'package:readmenow/utils/theme.dart';
 import 'package:readmenow/utils/theme_service.dart';
 
 void main() async {
-  var devices = ['27E0262A6207764C54B6FA32962E5FB3'];
   await GetStorage.init();
   await EasyLocalization.ensureInitialized();
-  WidgetsFlutterBinding.ensureInitialized();
-  await MobileAds.instance.initialize();
-  RequestConfiguration requestConfiguration =
-      RequestConfiguration(testDeviceIds: devices);
-  MobileAds.instance.updateRequestConfiguration(requestConfiguration);
+  var devices = ['27E0262A6207764C54B6FA32962E5FB3'];
+  if (Platform.isAndroid || Platform.isIOS) {
+    WidgetsFlutterBinding.ensureInitialized();
+    await MobileAds.instance.initialize();
+    RequestConfiguration requestConfiguration =
+        RequestConfiguration(testDeviceIds: devices);
+    MobileAds.instance.updateRequestConfiguration(requestConfiguration);
+  }
+
   runApp(EasyLocalization(
     supportedLocales: languages,
     path: 'assets/translations',
@@ -31,6 +36,9 @@ class ReadMeNow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.setLocale(context.locale);
+
+    print("hehe");
     return GetMaterialApp(
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,

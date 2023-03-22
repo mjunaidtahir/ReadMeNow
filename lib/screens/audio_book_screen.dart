@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:readmenow/screens/authors_tab.dart';
 import 'package:readmenow/screens/collection_tab.dart';
@@ -24,8 +25,8 @@ class _AudioBookScreenState extends State<AudioBookScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15),
             child: Column(
               children: [
-                const TopBar(
-                  text: "Books",
+                TopBar(
+                  text: "audioBook".tr(),
                   isTrelingIconRequired: false,
                 ),
                 const SizedBox(height: 20),
@@ -48,13 +49,13 @@ class _AudioBookScreenState extends State<AudioBookScreen> {
                       ),
                       labelColor: Colors.white,
                       unselectedLabelColor: Colors.grey,
-                      tabs: const [
-                        Tab(child: Text("Tiles")),
+                      tabs: [
+                        Tab(child: const Text("tiles").tr()),
                         Tab(
-                          child: Text("Authors"),
+                          child: Text("authors".tr()),
                         ),
                         Tab(
-                          child: Text("Collections"),
+                          child: Text("collections".tr()),
                         ),
                       ],
                     ),
@@ -65,12 +66,12 @@ class _AudioBookScreenState extends State<AudioBookScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
-                      children: const [
-                        Icon(Icons.arrow_upward_rounded, size: 20),
-                        Icon(Icons.arrow_downward_rounded, size: 20),
-                        SizedBox(width: 10),
-                        Text("Filters"),
-                        Icon(Icons.arrow_drop_down, size: 20),
+                      children: [
+                        const Icon(Icons.arrow_upward_rounded, size: 20),
+                        const Icon(Icons.arrow_downward_rounded, size: 20),
+                        const SizedBox(width: 10),
+                        Text("filters".tr()),
+                        const Icon(Icons.arrow_drop_down, size: 20),
                       ],
                     ),
                     GestureDetector(

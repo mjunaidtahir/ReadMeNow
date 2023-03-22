@@ -22,6 +22,7 @@
   "changeLanguage": "Change Language",
   "informationHelp": "Information & Help",
   "createAccount": "Create Account",
+  "createCollections": "Create Collections",
   "pleaseProvideFollowingDetailsForYourNewAccount": "Please provide following details for your new account",
   "fullName": "Full Name",
   "pleaseEnterYourName": "Please enter your name",
@@ -35,7 +36,7 @@
   "book": "Book",
   "audioBook": "Audiobook",
   "audioBooks": "Audiobooks",
-  "discovery": "Discovery",
+  "discover": "Discover",
   "download": "Download",
   "checkYourInternetConnection": "Check Your Internet Connection",
   "resetPasswordInstructions": "Enter your registered email below to receive password reset instruction",
@@ -97,7 +98,6 @@
   "softwareVersion": "Software Version",
   "myAccount": "My Account",
   "feedback": "Feedback",
- 
   "search": "Search...",
   "noBookFound": "No Book found",
   "leaveUsAMessageWeWillGetContactWithYouAsSoonAsPossibleOnYouEmailAddress": "Leave us a message, we will get contact with you as soon as possible on you email address",
@@ -107,10 +107,7 @@
   "yourName": "Your Name",
   "description": "Description",
   "pleaseEnterDescriptionOfYourRequest": "Please enter Description of your request",
- 
-
   "price": "Price",
-
   "expired": "Expired",
   "drafted": "Drafted",
   "applied": "Applied",
@@ -118,7 +115,6 @@
   "maleText": "Male",
   "femaleText": "Female",
   "sorryNoDataAvailable": "Sorry, no data available",
-
   "oldestToNewest": "Oldest to Newest",
   "newestToOldest": "Newest to Oldest",
   "sortBy": "Sort by",
@@ -141,7 +137,7 @@
   "failedToUploadVideo": "Failed to upload video",
   "failedToPurchaseVideo": "Failed to purchase video",
   "somethingIsWrong": "Something is wrong",
- 
+  "filterBy":"Filter By",
   "areYouSureYouWantToDeleteThisBook": "Are you sure you want to delete this Book?",
   "comingSoon": "Coming Soon",
   "pleaseSelectTheMusicDuration": "Please select the music duration",
@@ -176,5 +172,13 @@
   "rejected": "Rejected",
   "selectServer": "Select Server",
   "pleaseEnterAValidLink": "Please enter a valid link",
-  "tapBackAgainToLeave": "Tap back again to leave"
+  "tapBackAgainToLeave": "Tap back again to leave",
+  "unRead": "Un Read",
+  "started": "Started",
+  "finished": "Finished",
+  "availableOffline": "Available Offline",
+  "imported": "Imported",
+  "bought": "Bought",
+  "readingSample": "Reading Sample"
+
 }

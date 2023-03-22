@@ -48,7 +48,7 @@ class MainScreen extends GetView<BottomBarController> {
               ),
               BottomNavigationBarItem(
                 icon: const Icon(Ionicons.musical_notes),
-                label: 'audiobook'.tr(),
+                label: 'audioBook'.tr(),
               ),
               BottomNavigationBarItem(
                 icon: const Icon(Ionicons.compass_outline),

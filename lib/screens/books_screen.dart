@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart' hide Trans;
 import 'package:readmenow/screens/authors_tab.dart';
 import 'package:readmenow/screens/collection_tab.dart';
 import 'package:readmenow/screens/title_tab.dart';
@@ -67,10 +68,124 @@ class _BooksScreenState extends State<BooksScreen> {
                   children: [
                     Row(
                       children: [
-                        const Icon(Icons.arrow_upward_rounded, size: 20),
-                        const Icon(Icons.arrow_downward_rounded, size: 20),
+                        SizedBox(
+                          child: GestureDetector(
+                            onTap: () {
+                              Get.bottomSheet(
+                                Container(
+                                  height: Get.height / 3,
+                                  color: Theme.of(context).primaryColor,
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      children: [
+                                        ListTile(
+                                          onTap: () {
+                                            Get.back();
+                                          },
+                                          leading: const Icon(Icons.close),
+                                          title: Text("sortBy".tr()),
+                                        ),
+                                        const SizedBox(
+                                          height: 8,
+                                        ),
+                                        ListTile(
+                                          title: Text("a-z".tr()),
+                                        ),
+                                        const SizedBox(
+                                          height: 3,
+                                        ),
+                                        ListTile(
+                                          title: Text("z-a".tr()),
+                                        ),
+                                        const SizedBox(
+                                          height: 3,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                            child: Row(
+                              children: const [
+                                Icon(Icons.arrow_upward_rounded, size: 20),
+                                Icon(Icons.arrow_downward_rounded, size: 20),
+                              ],
+                            ),
+                          ),
+                        ),
                         const SizedBox(width: 10),
-                        Text("filters".tr()),
+                        GestureDetector(
+                          onTap: () {
+                            Get.bottomSheet(
+                              Container(
+                                height: Get.height / 2,
+                                color: Theme.of(context).primaryColor,
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    children: [
+                                      ListTile(
+                                        onTap: () {
+                                          Get.back();
+                                        },
+                                        leading: const Icon(Icons.close),
+                                        title: Text("filterBy".tr()),
+                                      ),
+                                      const SizedBox(
+                                        height: 8,
+                                      ),
+                                      ListTile(
+                                        title: Text("unRead".tr()),
+                                      ),
+                                      const SizedBox(
+                                        height: 3,
+                                      ),
+                                      ListTile(
+                                        title: Text("started".tr()),
+                                      ),
+                                      const SizedBox(
+                                        height: 3,
+                                      ),
+                                      ListTile(
+                                        title: Text("finished".tr()),
+                                      ),
+                                      const SizedBox(
+                                        height: 3,
+                                      ),
+                                      ListTile(
+                                        title: Text("availableOffline".tr()),
+                                      ),
+                                      const SizedBox(
+                                        height: 3,
+                                      ),
+                                      ListTile(
+                                        title: Text("imported".tr()),
+                                      ),
+                                      const SizedBox(
+                                        height: 3,
+                                      ),
+                                      ListTile(
+                                        title: Text("bought".tr()),
+                                      ),
+                                      const SizedBox(
+                                        height: 3,
+                                      ),
+                                      ListTile(
+                                        title: Text("readingSample".tr()),
+                                      ),
+                                      const SizedBox(
+                                        height: 3,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            "filters".tr(),
+                          ),
+                        ),
                         const Icon(Icons.arrow_drop_down, size: 20),
                       ],
                     ),

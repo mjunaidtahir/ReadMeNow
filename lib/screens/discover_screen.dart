@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:readmenow/screens/audio_bools_tab.dart';
 import 'package:readmenow/screens/books_tab.dart';
@@ -17,8 +18,8 @@ class DiscoverScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15),
             child: Column(
               children: [
-                const TopBar(
-                  text: "Discover",
+                TopBar(
+                  text: "discover".tr(),
                   isTrelingIconRequired: false,
                 ),
                 const SizedBox(height: 20),
@@ -41,10 +42,10 @@ class DiscoverScreen extends StatelessWidget {
                       ),
                       labelColor: Colors.white,
                       unselectedLabelColor: Colors.grey,
-                      tabs: const [
-                        Tab(child: Text("Books")),
+                      tabs: [
+                        Tab(child: Text("book".tr())),
                         Tab(
-                          child: Text("Audiobooks"),
+                          child: Text("audioBook".tr()),
                         ),
                       ],
                     ),

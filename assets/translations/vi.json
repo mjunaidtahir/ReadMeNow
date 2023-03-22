@@ -27,6 +27,7 @@
   "fullName": "Họ và tên",
   "pleaseEnterYourName": "xin hãy nhập tên của bạn",
   "age": "Tuổi",
+  "createCollections": "tạo bộ sưu tập",
   "pleaseEnterYourAge": "Làm ơn viết tuổi của bạn",
   "pleaseEnterAValidEmail": "Vui lòng nhập email hợp lệ",
   "pleaseAcceptTermsAndConditions": "Vui lòng chấp nhận các điều khoản và điều kiện",
@@ -35,8 +36,7 @@
   "horizontal": "Nằm ngang",
   "book": "Sách",
   "audioBook": "sách nói",
-  "audioBooks": "sách nói",
-  "discovery": "Khám phá",
+  "discover": "phát hiện",
   "download": "Tải xuống",
   "checkYourInternetConnection": "Kiểm tra kết nối Internet của bạn",
   "resetPasswordInstructions": "Nhập email đã đăng ký của bạn bên dưới để nhận hướng dẫn đặt lại mật khẩu",
@@ -165,8 +165,16 @@
   "uploadFromLocal": "Tải lên từ địa phương",
   "saearchBook": "Tìm Sách",
   "accepted": "Đã được chấp nhận",
+  "filterBy":"Lọc theo",
   "rejected": "Vật bị loại bỏ",
   "selectServer": "Chọn máy chủ",
   "pleaseEnterAValidLink": "Vui lòng nhập một liên kết hợp lệ",
-  "tapBackAgainToLeave": "Nhấn lại lần nữa để thoát"
-}
+  "tapBackAgainToLeave": "Nhấn lại lần nữa để thoát",
+  "unRead": "chưa đọc",
+  "started": "Đã bắt đầu",
+  "finished": "Hoàn thành",
+  "availableOffline": "Ngoại tuyến có sẵn",
+  "imported": "nhập khẩu",
+  "bought": "Mua",
+  "readingSample": "đọc mẫu"
+  }
